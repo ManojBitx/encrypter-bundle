@@ -1,0 +1,6 @@
+services:
+  manojx.encrypter:
+    class: ManojX\EncrypterBundle\Encrypter
+    public: false
+
+  ManojX\EncrypterBundle\EncrypterInterface: '@manojx.encrypter'
