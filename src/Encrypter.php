@@ -6,14 +6,18 @@ class Encrypter implements EncrypterInterface
 {
     private array $validKeyLengths = [16, 32, 64];
 
+    private string $secret;
+
     /**
      *
      * @param string $secret The secret key to use for encryption. It must be 16, 32, or 64 bytes long.
      *
      * @throws \Exception If the OpenSSL library is not available.
      */
-    public function __construct(private readonly string $secret)
+    public function __construct(string $secret)
     {
+        $this->secret = $secret;
+
         // Check if OpenSSL functions are available
         if (!function_exists('openssl_encrypt')) {
             throw new \Exception('The OpenSSL library is not available. Please install the OpenSSL extension for PHP.');
