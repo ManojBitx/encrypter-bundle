@@ -1,4 +1,4 @@
-# Encrypter Bundle
+# Encrypter Symfony Bundle
 
 ## Purpose
 
